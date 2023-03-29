@@ -51,9 +51,9 @@ public class MemberVO {
 
 	// 가방에 어떤 값들이 들어있는지 string으로 다 찍어볼 수 있다.
 	// 우클릭->source->generate toString()
-//	@Override
-//	public String toString() {
-//		return "MemberVO [id=" + id + ", pw=" + pw + ", name=" + name + ", tel=" + tel + "]";
-//	}
+	@Override
+	public String toString() {
+		return "MemberVO [id=" + id + ", pw=" + pw + ", name=" + name + ", tel=" + tel + "]";
+	}
 
 }

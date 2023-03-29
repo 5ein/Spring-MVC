@@ -6,33 +6,18 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller // 스프링에서 제어하는 역할로 등록!
-public class MemberController {
+public class BookController {
 	
 	@Autowired  //spring이 주소를 찾아줌!
-	MemberDAO dao; //전역변수(글로벌 변수)
+	BookDAO dao; //전역변수(글로벌 변수)
 	// 컨트롤 하는 기능(CRUD) == 회원가입, 수정, 탈퇴, 정보검색
 	
-	@RequestMapping("login")
-	public String login(MemberVO bag) {
-		System.out.println(bag);
-		//dao를 이용해서 db처리할 예정
-		//views아래로 넘어가게 되어있음. (views아래 login.jsp를 호출하게 됨)
-		int result = dao.login(bag); //1, 0
-		if (result == 1) {
-			return "ok"; //views아래 파일이름지정한것 ex)ok.jsp
-		}else {
-//			return "no"; //views 아래 이 이름의 파일로 감
-			//views아래로 가지 않고, webapp아래 member.jsp로 가고싶은 경우
-			return "redirect:member.jsp";
-		}
-	}
-
 	// 클래스 내에서 기능처리 담당
 	// 멤버변수 + 멤버메서드(기능처리 담당)
 	// 하나의 요청당 하나의 메서드 (하나의 버튼호출당 하나의 함수 연결!)
 	// 요청된 주소가 어떻게 될 때 바로 아래에 있는 메서드가 호출이 될지를 써주어야 한다.
-	@RequestMapping("insert")
-	public void insert(MemberVO bag) {
+	@RequestMapping("BookInsert")
+	public void insert(BookVO bag) {
 		//메서드의 입력변수(파라메터)로 변수를 
 		//선언해두면, 컨트롤러의 메서드내에서는 
 		//1)bag을 만들어서 
@@ -45,34 +30,27 @@ public class MemberController {
 		dao.insert(bag);
 	}
 	
-	@RequestMapping("update")
-	public void update(MemberVO bag) {
+	@RequestMapping("BookUpdate")
+	public void update(BookVO bag) {
 		System.out.println("update요청됨.");
 		System.out.println(bag);
 		dao.update(bag);
 	}
 	
-	@RequestMapping("delete")
-	public void delete(String id) {
+	@RequestMapping("BookDelete")
+	public void delete(int id) {
 		System.out.println("delete요청됨.");
 		System.out.println(id);
 		dao.delete(id);
 	}
 
-	@RequestMapping("one")
-	public void one(String id, Model model) {
+	@RequestMapping("BookOne")
+	public void one(int id, Model model) {
 		System.out.println("one요청됨.");
 		System.out.println(id);
-		MemberVO bag = dao.one(id);
-		//bag에 검색결과 다 들어있음.
-		//views 아래 one.jsp로 쓸 수 있도록 설정해주어야함.
+		BookVO bag = dao.one(id);
 		model.addAttribute("bag", bag);
-		//views 까지 전달할 속성으로 추가해주세요.
 	}
 
-	@RequestMapping("list")
-	public void list(MemberVO bag) {
-		
-	}
 }
 

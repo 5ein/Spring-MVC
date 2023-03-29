@@ -7,16 +7,13 @@
 <title>Insert title here</title>
 <style type="text/css">
 body {
-	background: blue;
+	background: pink;
 	color: white;
 }
 </style>
 </head>
 <body>
-게시물검색 처리요청이 완료되었습니다. <br>
-검색한 no >> ${bag.no} <br>
-검색한 title >> ${bag.title} <br>
-검색한 content >> ${bag.content} <br>
-검색한 writer >> ${bag.writer} <br>
+<h3>등록 성공!</h3>
+<img src="resources/img/yes.jpg" width="250" height="250">
 </body>
 </html>

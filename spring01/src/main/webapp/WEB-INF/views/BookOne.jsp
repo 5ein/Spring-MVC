@@ -13,14 +13,12 @@ body {
 </style>
 </head>
 <body>
-<!-- 표현식(expression) -->
-회원검색 처리 요청이 완료되었습니다.<br>
-<!-- bag.getId() -->
-<!-- model의 속성으로 전달받은 bag은 EL로 출력한다. -->
-<!-- 출력용(expression language == EL) -->
-${bag.id}<br>
-${bag.pw}<br>
-${bag.name}<br>
-${bag.tel}<br>
+<h3>검색 성공!</h3>
+검색한 id >> ${bag.id} <br>
+검색한 name >> ${bag.name} <br>
+검색한 url >> ${bag.url} <br>
+검색한 img >> ${bag.img} <br>
+<img src="resources/img/${bag.img}" width="300" height="100">
+<br>
 </body>
 </html>

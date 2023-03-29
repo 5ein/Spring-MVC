@@ -7,6 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h3>로그인 화면입니다. </h3>
+<form action="login" method="get">
+	id : <input name="id" value="apple"><br>
+	pw : <input name="pw" value="1234"><br>
+	<button type="submit">서버로 전송</button>
+</form>
+<hr color="pink">
+
 <h3>회원가입 화면입니다. </h3>
 <form action="insert" method="get">
 	id : <input name="id" value="cookie"><br>
