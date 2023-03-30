@@ -9,14 +9,9 @@
 <body>
 <%
 	session.setAttribute("view", 100);
-	if(session == null){
-		
-	}else{
-		
-	}
 %>
+서버에 세션 속성등록함.
 <hr color="pink">
-서버에 세션 속성등록함
-<a hreflang="page04.jsp"><button>session속성가지고오기</button></a>
+<a href="page04.jsp"><button>session속성가지고오기</button></a>
 </body>
 </html>

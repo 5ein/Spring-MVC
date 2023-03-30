@@ -27,13 +27,7 @@ button {
 <table border="1">
 	<tr>
 		<td><b>전체 도서리스트</b></td>
-		<td>
-			<table>
-				<tr>
-					<td><a href="BookList"><button>전체 도서리스트</button></a></td>
-				</tr>
-			</table>
-		</td>
+		<td><a href="BookList"><button>전체 도서리스트</button></a></td>
 	</tr>
 	<tr>
 		<td><b>등록</b></td>
