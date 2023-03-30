@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h3>전체 검색 화면입니다. </h3>
+<a href="list">모든 회원정보 가지고 오기</a>
+<hr>
+
 <h3>로그인 화면입니다. </h3>
 <form action="login" method="get">
 	id : <input name="id" value="apple"><br>

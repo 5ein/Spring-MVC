@@ -5,37 +5,112 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+h1{
+	text-align: center;
+}
+table {
+	background: #fed6ff;
+	text-align: center;
+	margin: auto;
+}
+td{
+	width: 300px
+}
+button {
+	background: white;
+}
+</style>
 </head>
 <body>
-<h3>등록</h3>
-<form action="BookInsert" method="get">
-	name : <input name="name" value="안녕"><br>
-	url: <input name="url" value="1234"><br>
-	img : <input name="img" value="011"><br>
-	<button type="submit">등록</button>
-</form>
-<hr color="pink">
-
-<h3>수정</h3>
-<form action="BookUpdate" method="get">
-	id : <input name="id" value="6"><br>
-	name : <input name="name" value="가자"><br>
-	<button type="submit">수정</button>
-</form>
-<hr color="green">
-
-<h3>삭제</h3>
-<form action="BookDelete" method="get">
-	id : <input name="id" value="6"><br>
-	<button type="submit">삭제</button>
-</form>
-<hr color="red">
-
-<h3>검색</h3>
-<form action="BookOne" method="get">
-	id : <input name="id" value="1"><br>
-	<button type="submit">검색</button>
-</form>
-<hr color="blue">
+<h1>BOOK 관리 시스템</h1>
+<table border="1">
+	<tr>
+		<td><b>전체 도서리스트</b></td>
+		<td>
+			<table>
+				<tr>
+					<td><a href="BookList"><button>전체 도서리스트</button></a></td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td><b>등록</b></td>
+		<td>
+			<form action="BookInsert" method="get">
+			<table>
+				<tr>
+					<td>제목</td>
+					<td><input name="name" value="안녕"></td>
+				</tr>
+				<tr>
+					<td>url</td>
+					<td><input name="url" value="1234"></td>
+				</tr>
+				<tr>
+					<td>이미지</td>
+					<td><input name="img" value="011.jpg"></td>
+				</tr>
+				<tr>
+					<td><button type="submit">등록</button></td>
+				</tr>
+			</table>
+			</form>
+		</td>
+	</tr>
+	<tr>
+		<td><b>수정</b></td>
+		<td>
+			<form action="BookUpdate" method="get">
+			<table>
+				<tr>
+					<td>ID </td>
+					<td><input name="id" value="6"></td>
+				</tr>
+				<tr>
+					<td>제목</td>
+					<td><input name="name" value="가자"></td>
+				</tr>
+				<tr>
+					<td><button type="submit">수정</button></td>
+				</tr>
+			</table>
+			</form>
+		</td>
+	</tr>
+	<tr>
+		<td><b>삭제</b></td>
+		<td>
+			<form action="BookDelete" method="get">
+			<table>
+				<tr>
+					<td>ID </td>
+					<td><input name="id" value="6"></td>
+				</tr>
+				<tr>
+					<td><button type="submit">삭제</button></td>
+				</tr>
+			</table>
+			</form>
+		</td>
+	</tr>
+	<tr>
+		<td><b>검색</b></td>
+		<td>
+			<form action="BookOne" method="get">
+			<table>
+				<tr>
+					<td>ID </td>
+					<td><input name="id" value="1"></td>
+				</tr>
+				<tr>
+					<td><button type="submit">검색</button></td>
+				</tr>
+			</table>
+			</form>
+		</td>
+	</tr>
+</table>
 </body>
 </html>

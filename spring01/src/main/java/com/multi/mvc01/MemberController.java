@@ -1,14 +1,17 @@
 package com.multi.mvc01;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@Controller // 스프링에서 제어하는 역할로 등록!
+@Controller // 스프링에서 제어하는 역할로 등록! dependency
 public class MemberController {
-	
-	@Autowired  //spring이 주소를 찾아줌!
+				
+	@Autowired  //DI(Deoendency injection) spring이 주소를 찾아줌!
+	//MemberDAO의 싱글콘 객체 ram의 어디에 있는지 찾아서 그 주소룰 아래 변수에 넣어주세요
 	MemberDAO dao; //전역변수(글로벌 변수)
 	// 컨트롤 하는 기능(CRUD) == 회원가입, 수정, 탈퇴, 정보검색
 	
@@ -71,8 +74,10 @@ public class MemberController {
 	}
 
 	@RequestMapping("list")
-	public void list(MemberVO bag) {
-		
+	public void list(Model model) {
+		//Model은 컨트롤러의 list를 views/list.jsp 까지만 전달할 수 있는 객체
+		ArrayList<MemberVO> list = dao.list();
+		model.addAttribute("list", list);
 	}
 }
 

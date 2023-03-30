@@ -7,13 +7,16 @@
 <title>Insert title here</title>
 <style type="text/css">
 body {
-	background: red;
-	color: white;
+	background: #fed6ff;
+}
+button {
+	background: white;
 }
 </style>
 </head>
 <body>
-<h3>삭제 성공!</h3>
-<img src="resources/img/yes.jpg" width="250" height="250">
+<a href="book.jsp"><button>첫페이지로</button></a>
+<h1>삭제 성공!</h1>
+<img src="resources/img/yes.jpg" width="300" height="250">
 </body>
 </html>

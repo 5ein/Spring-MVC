@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h3>전체 게시글리스트 화면입니다. </h3>
+<a href="list2">모든 게시글 리스트 가지고 오기</a>
+<hr>
 <h3>게시판글쓰기 화면입니다. </h3>
 <form action="insert2.multi" method="get">
 	title : <input name="title" value="화요일"><br>

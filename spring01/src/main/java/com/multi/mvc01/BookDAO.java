@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import org.springframework.stereotype.Component;
 
@@ -191,6 +192,72 @@ public class BookDAO {
 
 		System.out.println(result);
 		return result;
+	}
+	
+	// 여러개 가져오기
+	public ArrayList<BookVO> list() { // 검색하려면 ()안에 적어주기
+		ResultSet rs = null; // 항목명 + 결과데이터를 담고있는 테이블
+
+		// 가방들 넣어줄 큰 컨테이너 역할을 부품이 필요!
+		// ArrayList
+		// ArrayList<MemberVO> ==> MemberVO만 들어간 arraylist라는 의미
+		ArrayList<BookVO> list = new ArrayList<>(); // list라는 컨테이너에게 가방을 넣겠다.
+
+		BookVO bag = null;
+		try {
+			// 1.mySQL과 연결한 부품 설정
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			System.out.println("1.mySQL과 자바 연결할 부품 설정 성공.");
+
+			// 2.mySQL에 연결해보자.(java --- oracle)
+			String url = "jdbc:mysql://localhost:3306/multi";
+			String user = "root";
+			String password = "1234";
+			Connection con = DriverManager.getConnection(url, user, password);
+			System.out.println("2. mySQL 연결 성공.");
+
+			// 3.
+			String sql = "select * from book"; // 조건주지 않고 다 가져옴
+			PreparedStatement ps = con.prepareStatement(sql);
+			// ps.setString(1, id); //?가 없어졌기 때문에 필요없음 삭제!
+			System.out.println("3. SQL문 부품(객체)으로 만들어주기.");
+
+			// 4. SQL문 mySQL로 보내기
+			rs = ps.executeQuery();
+			System.out.println("4. SQL문 mySQL로 보내기 성공.");
+			while (rs.next()) { // 검색결과가 있는지 여부는 rs.next()
+				// true이면 있다라는 의미, false이면 없다라는 의미
+				// 1. 검색결과가 있으면,
+				// System.out.println("검색결과 있음. 성공.");
+				// 2. 각 컬럼에서 가져오자
+				int id = rs.getInt(1);
+				String name = rs.getString(2);
+				String url2 = rs.getString(3);
+				String img = rs.getString(4);
+
+				// 검색결과를 검색화면 UI부분에 넣어주어야 함. (여기에jop넣으면 안됨)
+				// 3. 가방을 만들자
+				bag = new BookVO();
+				bag.setId(id);
+				bag.setName(name);
+				bag.setUrl(url2);
+				bag.setImg(img);
+
+				// 4. list에 bag을 추가해주자.
+				list.add(bag);
+			}
+			ps.close();
+			rs.close();
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		// return id, pw, name, tel은 XXXX! ==> 파이썬만 가능
+		// return 뒤에는 반드시 여러 데이터를 묶어서 리턴해주어야 함 ==> 자바는 가방을 만들어줘야함
+		
+		// 검색결과가 있을 때는 bag에 데이터가 들어있음.
+		// 검색결과가 없을 때는 bag에 무엇이 들어있나? null
+		return list;
 	}
 
 }
