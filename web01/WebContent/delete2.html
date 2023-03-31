@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>게시판글 삭제</title>
+<style type="text/css">
+body { /* 컨트롤 + / - 자동주석, 태그선택! */
+	background: #fac4ff;
+}
+
+button {
+	background: pink;
+}
+
+.t1 { /* .은 클래스 선택!, 여러개선택!  */
+	background: yellow;
+	width: 150px;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+<h3>게시판글 삭제 페이지</h3>
+	<hr>
+	<a href="bbs.html">
+		<button id="b1">게시판정보 페이지로</button>
+	</a>
+	<form action="delete2.jsp" method="get"> <!-- method는 안쓰면 get임 -->
+	<!-- get방식으로 보내면 주소에 표시가 남 (비밀번호 같은 것은 get 방식으로 하면 안됨!) -->
+	<!-- http의 header(요청주소 + get방식으로 넘어가는 데이터) -->	
+		<table border="1">
+			<tr>
+				<td class="t1">삭제할 번호 :</td>
+				<td><input name="no"></td>
+			</tr>
+			<tr>
+				<td colspan="2" class="t1">
+					<button id="b2">게시판 삭제할 no 데이터 전송</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

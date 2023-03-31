@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>선수정보 삭제</title>
+<style type="text/css">
+button {
+	background: #fac4ff;
+	color: black;
+}
+.t1 {
+	width: 150px;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+<h3>선수정보 삭제 페이지</h3>
+	<hr color="black">
+	<a href="player.html">
+		<button id="b1">player 페이지로</button>
+	</a>
+	<form action="delete5.jsp" method="get">
+		<table border="1">
+			<tr>
+				<td class="t1">삭제할 등번호 :</td>
+				<td><input name="backnumber"></td>
+			</tr>
+			<tr>
+				<td colspan="2" class="t1">
+					<button id="b2">선수정보 삭제</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
