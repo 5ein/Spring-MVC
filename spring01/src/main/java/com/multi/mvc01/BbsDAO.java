@@ -35,7 +35,7 @@ public class BbsDAO {
 			System.out.println("2. mySQL 연결 성공.");
 
 			// 3.
-			String sql = "select * from bbs"; // 조건주지 않고 다 가져옴
+			String sql = "select * from multi.bbs"; // 조건주지 않고 다 가져옴
 			PreparedStatement ps = con.prepareStatement(sql);
 			// ps.setString(1, id); //?가 없어졌기 때문에 필요없음 삭제!
 			System.out.println("3. SQL문 부품(객체)으로 만들어주기.");
@@ -98,7 +98,7 @@ public class BbsDAO {
 			System.out.println("2. mySQL 연결 성공.");
 
 			// 3.SQL문 부품(객체)으로 만들어주기
-			String sql = "select * from BBS where NO = ? ";
+			String sql = "select * from multi.bbs where NO = ? ";
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setInt(1, NO);
 			System.out.println("3. SQL문 부품(객체)으로 만들어주기.");
@@ -148,7 +148,7 @@ public class BbsDAO {
 
 			// 3.SQL문 부품(객체)으로 만들어주기
 			// 물음표 연산자 사용!(따옴표X)
-			String sql = "delete from BBS where NO = ? "; // NO가 ?인(조건)것 삭제
+			String sql = "delete from multi.bbs where NO = ? "; // NO가 ?인(조건)것 삭제
 			PreparedStatement ps = con.prepareStatement(sql); // PreparedStatement 가 SQL부품!!
 			ps.setInt(1, no); // 만약 NO가 String이면: ps.setString(1, NO);
 			System.out.println("3. SQL문 부품(객체)으로 만들어주기.");
@@ -187,7 +187,7 @@ public class BbsDAO {
 
 			// 3.SQL문 부품(객체)으로 만들어주기
 			// 물음표 연산자 사용!(따옴표X)
-			String sql = "update bbs set content = ? where NO = ? ";
+			String sql = "update multi.bbs set content = ? where NO = ? ";
 			PreparedStatement ps = con.prepareStatement(sql); // PreparedStatement
 			ps.setString(1, bag.getContent());
 			ps.setInt(2, bag.getNo());
@@ -226,7 +226,7 @@ public class BbsDAO {
 
 			// 3. SQL문 부품(객체)으로 만들어주기
 			// 물음표 연산자 사용!(따옴표X)
-			String sql = "insert into bbs(title, content, writer) values (?, ?, ?)"; // 순서대로 입력받아온 값을 ?에 차례대로 넣어줌
+			String sql = "insert into multi.bbs(title, content, writer) values (?, ?, ?)"; // 순서대로 입력받아온 값을 ?에 차례대로 넣어줌
 			PreparedStatement ps = con.prepareStatement(sql); // PreparedStatement 가 SQL부품!!
 			ps.setString(1, bag.getTitle());
 			ps.setString(2, bag.getContent());

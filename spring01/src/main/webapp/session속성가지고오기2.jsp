@@ -5,14 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">
-body {
-	background: pink;
-}
-</style>
 </head>
 <body>
-${id}님! 로그인 처리 성공!<br>
-<img src="resources/img/yes.jpg" width="250" height="200">
+<%
+	int count = (Integer)session.getAttribute("count"); //100
+	count++;
+	session.setAttribute("count", count); //101
+%>
+현재 설정되어 있는 카운트 ${count}
 </body>
 </html>
