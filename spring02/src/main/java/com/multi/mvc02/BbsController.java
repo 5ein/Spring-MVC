@@ -52,12 +52,11 @@ public class BbsController {
 		BbsVO bag = dao.one(no);
 		//검색결과가 있는지 프린트!
 		System.out.println(bag);
+		model.addAttribute("bag", bag);
 		
 		//bbs상세페이지 만들 떄, reply list도 함께 가지고 와야함.
 		ArrayList<ReplyVO> list = dao2.list(no);
 		model.addAttribute("list", list);
-		
-		model.addAttribute("bag", bag);
 	}
 	
 	@RequestMapping("list2")
@@ -65,6 +64,23 @@ public class BbsController {
 		ArrayList<BbsVO> list = dao.list();
 		System.out.println(list.size()); //사이즈를 찍어보세요.
 		model.addAttribute("list", list);
+	}
+	
+	@RequestMapping("list5")
+	public void list5(Model model) {
+		ArrayList<BbsVO> list = dao.list();
+		System.out.println(list.size()); //사이즈를 찍어보세요.
+		model.addAttribute("list", list);
+	}
+	
+	@RequestMapping("one6")
+	public void one6(int no, Model model) {
+		System.out.println("one요청됨.");
+		System.out.println(no);
+		BbsVO bag = dao.one(no);
+		//검색결과가 있는지 프린트!
+		System.out.println(bag);
+		model.addAttribute("bag", bag);
 	}
 	
 }

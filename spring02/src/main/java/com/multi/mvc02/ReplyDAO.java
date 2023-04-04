@@ -31,7 +31,7 @@ public class ReplyDAO {
 			Connection con = DriverManager.getConnection(url, user, password);
 			System.out.println("2. mySQL 연결 성공.");
 			
-			//3. 
+			// 3. SQL문 부품(객체)으로 만들어주기
 			// 댓글은 특정 하나의 게시물에 대한 리스트이므로
 			// 특정 게시물을 가지고 댓글 리스트를 가지고 와야함.
 			String sql = "select * from multi.reply where bbsno = ?"; //bbsno로 불러오기때문에 넣어주기
