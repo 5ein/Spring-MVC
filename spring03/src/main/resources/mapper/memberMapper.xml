@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member">
+	
+	<!-- 파라미터타입은 mybatis-config.xml에 설정해준 별명 또는 경로통채로 적기 -->
+	
+										<!-- 경로 통채로 적음 -->
+	<insert id="create" parameterType="com.multi.mvc03.MemberVO">
+		insert into member values (#{id}, #{pw}, #{name}, #{tel})
+	</insert>
+	
+								<!-- 별명 적음 -->
+	<update id="up"  parameterType="MemberVO">
+		update member set tel = #{tel} where id = #{id}
+	</update>
+	
+						 		<!-- 별명 적음 -->
+	<delete id="del"  parameterType="MemberVO">
+		delete from member where id = #{id}
+	</delete>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
