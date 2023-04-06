@@ -66,33 +66,18 @@
 				}//success
 			})//ajax
 		})//b22
-		$("#b3").click(function() {
-			$('#result').empty()
-			$.ajax({
-				url : "jsonResponse4",
-				dataType : "json",
-				success : function(x) {
-					alert(x.length)
-					id = x[0].id
-					pw = x[0].pw
-					name = x[0].name
-					tel = x[0].tel
-					table = "<table><tr><td>id</td><td>pw</td><td>name</td><td>tel</td></tr>" +
-					"<tr><td>" + id + "</td><td>" + pw + "</td><td>" + name + "</td><td>" + tel + "</td></tr></table>"
-					$('#result').append(table)
-				}//success
-			})//ajax
-		})//b3
+		
 	})//$
 </script>
 </head>
 <body>
-	<button id="b1">심화1</button>
-	<button id="b21">심화2-1</button>
-	<button id="b22">심화2-2</button>
-	<button id="b3">심화3</button>
-	<button id="b4">심화4</button>
+	<button id="b1">Member한명 검색</button>
+	<button id="b21">Member 리스트</button>
+	<button id="b22">Member 리스트 테이블 형태</button>
+	<button id="b3">카카오맵 위도경도</button>
+	<button id="b4">구글차트</button>
 	<hr>
 	<div id="result"></div>
+	<div id="map"></div>
 </body>
 </html>
