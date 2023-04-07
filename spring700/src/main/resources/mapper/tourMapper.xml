@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="tour">
+		
+	<insert id="create" parameterType="tourVO">
+		insert into tour values (null, #{area}, #{place}, #{review}, #{grade})
+	</insert>
+	
+	<update id="update" parameterType="tourVO">
+		update tour set review = #{review}, grade = #{grade} where no = #{no}
+	</update>
+	
+	<delete id="delete" parameterType="tourVO">
+		delete from tour where no = #{no}
+	</delete>
+	
+	<select id="one" parameterType="int" resultType="tourVO">
+	select * from tour
+	where no = #{no}
+	</select>
+	
+	<select id="all" resultType="tourVO">
+	select * from tour
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
