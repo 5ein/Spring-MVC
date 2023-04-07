@@ -10,14 +10,19 @@
 	</insert>
 	
 								<!-- 별명 적음 -->
-	<update id="up"  parameterType="MemberVO">
+	<update id="up"  parameterType="memberVO">
 		update member set tel = #{tel} where id = #{id}
 	</update>
 	
 						 		<!-- 별명 적음 -->
-	<delete id="del"  parameterType="MemberVO">
+	<delete id="del"  parameterType="memberVO">
 		delete from member where id = #{id}
 	</delete>
+	
+	<select id="one" parameterType="String" resultType="memberVO">
+		select * from member 
+		where id = #{id}
+	</select>
 	
 </mapper>
 

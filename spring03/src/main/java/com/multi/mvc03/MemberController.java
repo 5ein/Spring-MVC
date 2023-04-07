@@ -50,6 +50,14 @@ public class MemberController {
 		dao.delete(id);
 	}
 
+	@RequestMapping("one")
+	public void one(String id, Model model) { //셀렉터는 views에 무조건 담아야해서 model필수!
+		System.out.println("one요청됨.");
+		System.out.println(id);
+		MemberVO bag = dao.one(id);
+		model.addAttribute("bag", bag);
+	}
+	
 //	@RequestMapping("login")
 //	public String login(MemberVO bag, HttpSession session) {
 //		System.out.println(bag);
@@ -67,17 +75,6 @@ public class MemberController {
 //		}
 //	}
 //	
-//	@RequestMapping("one")
-//	public void one(String id, Model model) {
-//		System.out.println("one요청됨.");
-//		System.out.println(id);
-//		MemberVO bag = dao.one(id);
-//		//bag에 검색결과 다 들어있음.
-//		//views 아래 one.jsp로 쓸 수 있도록 설정해주어야함.
-//		model.addAttribute("bag", bag);
-//		//views 까지 전달할 속성으로 추가해주세요.
-//	}
-//
 //	@RequestMapping("list")
 //	public void list(Model model) {
 //		//Model은 컨트롤러의 list를 views/list.jsp 까지만 전달할 수 있는 객체

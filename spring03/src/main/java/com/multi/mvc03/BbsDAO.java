@@ -17,34 +17,36 @@ public class BbsDAO {
 	@Autowired
 	SqlSessionTemplate my;
 	
-	// 삭제
-	public int delete(int no) {
-		int result = my.delete("bbs.del", no);
-		return result;
-	}
-	
-	// 수정
-	public int update(BbsVO bag) {
-		int result = my.update("bbs.up", bag);
-		return result;
-	}
-	
 	// 작성
 	public int insert(BbsVO bag) {
 		int result = my.insert("bbs.create", bag);
 		return result;
 	}
 	
+	// 수정
+	public int update(BbsVO bag) {
+		System.out.println("-----" + my);
+		int result = my.update("bbs.up", bag);
+		return result;
+	}
+	
+	// 삭제
+	public int delete(int no) {
+		System.out.println("-----" + my);
+		int result = my.delete("bbs.del", no);
+		return result;
+	}
+
+	// 검색
+	public BbsVO one(int no) {
+		BbsVO bag = my.selectOne("bbs.one", no);
+		return bag;
+	}
+	
 //	// 여러개 가져오기
 //	public ArrayList<BbsVO> list() { // 검색하려면 ()안에 적어주기
 //		
 //		return list;
-//	}
-//
-//	// 검색
-//	public BbsVO one(int NO) {
-//
-//		return bag;
 //	}
 
 

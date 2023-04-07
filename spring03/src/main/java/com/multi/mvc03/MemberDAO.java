@@ -36,14 +36,15 @@ public class MemberDAO {
 		return result;
 	}
 
+	// 검색
+	public MemberVO one(String id) {
+		MemberVO bag = my.selectOne("member.one", id);
+		return bag;
+	}
+
 //	// 여러개 가져오기
 //	public ArrayList<MemberVO> list() { // 검색하려면 ()안에 적어주기
 //		return list;
-//	}
-//
-//	// 검색
-//	public MemberVO one(String id) {
-//		return bag;
 //	}
 //
 //	// 로그인

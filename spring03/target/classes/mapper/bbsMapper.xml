@@ -4,17 +4,22 @@
 	
 	<!-- 파라미터타입은 mybatis-config.xml에 설정해준 별명 또는 경로통채로 적기 -->
 	
-	<insert id="create" parameterType="BbsVO">
-		insert into bbs values (#{no}, #{title}, #{content}, #{writer})
+	<insert id="create" parameterType="bbsVO">
+		insert into bbs values (null, #{title}, #{content}, #{writer})
 	</insert>
 	
-	<update id="up" parameterType="BbsVO">
+	<update id="up" parameterType="bbsVO">
 		update bbs set content = #{content} where no = #{no}
 	</update>
 	
-	<delete id="del" parameterType="BbsVO">
+	<delete id="del" parameterType="bbsVO">
 		delete from bbs where no = #{no}
 	</delete>
+	
+	<select id="one" parameterType="int" resultType="bbsVO">
+	select * from bbs
+	where no = #{no}
+	</select>
 	
 </mapper>
 
