@@ -105,9 +105,19 @@
 			})//ajax
 		})//b3
 		
-	    google.charts.load('current', {'packages':['corechart']});
-	    google.charts.setOnLoadCallback(drawChart);
-	    function drawChart() {
+		$('#b4').click(function() {
+			$('#result').empty()
+			$('#here').empty()
+			$.ajax({
+				url: "",
+				success: function(x) {
+				    google.charts.load('current', {'packages':['corechart']});
+				    google.charts.setOnLoadCallback(drawChart);
+				}
+			})
+		})
+		
+		function drawChart() {
 			$.ajax({
 				url: "jsonResponse6",
 				dataType: "json",
@@ -133,10 +143,7 @@
 			        chart.draw(data, options);
 				}//success
 			})//ajax
-		}//
-		$('#here').click(function () {
-			drawChart();
-		});
+		}//draw chart
 	})//$
 </script>
 </head>
