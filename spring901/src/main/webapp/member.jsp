@@ -8,7 +8,7 @@
 </head>
 <body>
 <h3>전체 검색 화면입니다. </h3>
-<a href="list">모든 회원정보 가지고 오기</a>
+<a href="list"><button>모든 회원정보 가지고 오기</button></a>
 <hr>
 
 <h3>로그인 화면입니다. </h3>
@@ -39,14 +39,14 @@
 
 <h3>회원탈퇴 화면입니다. </h3>
 <form action="delete" method="get">
-	id : <input name="id" value="cookie"><br>
+	id : <input name="id" value="lemon"><br>
 	<button type="submit">서버로 전송</button>
 </form>
 <hr color="green">
 
 <h3>회원검색 화면입니다. </h3>
 <form action="one" method="get">
-	id : <input name="id" value="cookie"><br>
+	id : <input name="id" value="cookie1"><br>
 	<button type="submit">서버로 전송</button>
 </form>
 <hr color="blue">
